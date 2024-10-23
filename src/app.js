@@ -4,12 +4,13 @@ const express = require("express");
 
 const app = express();
 
-app.get("/user", function (req, res) {
-    return res.json("user");
-});
+// app.get("/user/:id", function (req, res) {
+//     return res.json(req.params.id);
+// });
 
-app.get("/login", function (req, res) {
-    return res.json("login");
+app.get("/user", function (req, res) {
+    const { name, age } = req.query;
+    return res.status(404).send(name);
 });
 
 app.listen(process.env.PORT || 3000);
