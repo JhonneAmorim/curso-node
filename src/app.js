@@ -1,16 +1,12 @@
 require("dotenv").config();
+const Home = require("./controllers/Home");
+const Login = require("./controllers/Login");
 
 const express = require("express");
 
 const app = express();
 
-// app.get("/user/:id", function (req, res) {
-//     return res.json(req.params.id);
-// });
-
-app.get("/user", function (req, res) {
-    const { name, age } = req.query;
-    return res.status(404).send(name);
-});
+app.get("/", Home.index);
+app.post("/login", Login.store);
 
 app.listen(process.env.PORT || 3000);
