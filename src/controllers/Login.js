@@ -1,5 +1,7 @@
-const store = function (req, res) {
-    return res.json("login");
+const { MASTER_DIR } = require("../helpers/constants");
+
+const index = function (req, res) {
+    return res.render("login", { layout: MASTER_DIR, title: "Login" });
 };
 
-module.exports = { store };
+module.exports = { index };
