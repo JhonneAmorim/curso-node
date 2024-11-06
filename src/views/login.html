@@ -1,5 +1,11 @@
 {{#section 'styles'}}
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="login.css">
 {{/section}}
 
 <h2>Login</h2>
+
+<form action="/login" method="post">
+    <input type="text" name="email">
+    <input type="password" name="password">
+    <button type="submit">Store</button>
+</form>

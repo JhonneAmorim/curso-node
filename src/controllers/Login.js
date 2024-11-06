@@ -4,4 +4,8 @@ const index = function (req, res) {
     return res.render("login", { layout: MASTER_DIR, title: "Login" });
 };
 
-module.exports = { index };
+const store = function (req, res) {
+    return res.json(req.body);
+};
+
+module.exports = { index, store };
